@@ -1,0 +1,17 @@
+﻿<h1>Users</h1>
+<mat-tab-group mat-stretch-tabs="false" mat-align-tabs="start" [(selectedIndex)]="index" class="db-tabs-quality" (selectedTabChange)="topTabChange($event)">
+    <mat-tab label="Admin"> </mat-tab>
+    <mat-tab label="User"> </mat-tab>
+  </mat-tab-group>
+<ngx-datatable #table class="material expandable " 
+[rows]="users" [columnMode]="'force'" 
+[columns]="columns" 
+ [rowHeight]="32" [limit]="15" 
+ [selectionType]="type"
+ (select)="select($event)">
+
+
+[selectAllRowsOnPage]="false">
+<!-- <a class="nav-item nav-link" routerLink="/orders" routerLinkActive="active">Orders</a> -->
+
+</ngx-datatable>

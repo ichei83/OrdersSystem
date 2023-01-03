@@ -1,0 +1,27 @@
+﻿<h1>Orders</h1>
+<h4>Choose a Start and End Dates</h4>
+<div class="card-container">
+    <input class="card1" type="date" required [ngModel]="startDate | date:'yyyy-MM-dd'"
+    (ngModelChange)="startDate = $event" #startDateName="ngModel" name="startDateName"
+     />
+     <input class="card1" type="date" required [ngModel]="endDate | date:'yyyy-MM-dd'"
+     (ngModelChange)="endDate = $event" #endDateName="ngModel" name="endDateName"
+      />
+
+</div>
+<div class="card-container">
+    <button class="card1 card-small" (click)="onClick()" tabindex="0">
+        <span>Get Orders</span>
+      </button>
+</div>
+
+<ngx-datatable #table 
+class="material" 
+[rows]="orders" [columnMode]="'force'" 
+[columns]="columns" 
+[headerHeight]="50"
+[footerHeight]="50"
+rowHeight="auto"
+[limit]="15" 
+[selectAllRowsOnPage]="false">
+</ngx-datatable>
